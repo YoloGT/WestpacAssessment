@@ -1,0 +1,37 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "GET",
+    "urlPath": "/repositories",
+    "queryParameters": {
+      "since": {
+        "equalTo": "28"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 29,
+        "name": "github-services",
+        "full_name": "github/github-services",
+        "owner": {
+          "login": "github",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "type": "Organization"
+        },
+        "html_url": "https://github.com/github/github-services",
+        "description": "Service hooks for GitHub repositories.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/github/github-services",
+        "languages_url": "http://127.0.0.1:8080/repos/github/github-services/languages",
+        "stargazers_count": 1400,
+        "language": "Ruby"
+      }
+    ]
+  }
+}

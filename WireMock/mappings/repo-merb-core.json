@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/repos/wycats/merb-core"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 26,
+      "name": "merb-core",
+      "full_name": "wycats/merb-core",
+      "owner": {
+        "login": "wycats",
+        "avatar_url": "https://avatars.githubusercontent.com/u/4?v=4",
+        "type": "User"
+      },
+      "html_url": "https://github.com/wycats/merb-core",
+      "description": "Merb Core: All you need. None you don't.",
+      "fork": false,
+      "url": "http://127.0.0.1:8080/repos/wycats/merb-core",
+      "languages_url": "http://127.0.0.1:8080/repos/wycats/merb-core/languages",
+      "stargazers_count": 790,
+      "language": "Ruby"
+    }
+  }
+}

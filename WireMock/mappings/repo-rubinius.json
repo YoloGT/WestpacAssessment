@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/repos/rubinius/rubinius"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 27,
+      "name": "rubinius",
+      "full_name": "rubinius/rubinius",
+      "owner": {
+        "login": "rubinius",
+        "avatar_url": "https://avatars.githubusercontent.com/u/317747?v=4",
+        "type": "Organization"
+      },
+      "html_url": "https://github.com/rubinius/rubinius",
+      "description": "The Rubinius Language Platform",
+      "fork": false,
+      "url": "http://127.0.0.1:8080/repos/rubinius/rubinius",
+      "languages_url": "http://127.0.0.1:8080/repos/rubinius/rubinius/languages",
+      "stargazers_count": 5500,
+      "language": "C++"
+    }
+  }
+}

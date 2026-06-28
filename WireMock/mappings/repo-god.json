@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/repos/mojombo/god"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 28,
+      "name": "god",
+      "full_name": "mojombo/god",
+      "owner": {
+        "login": "mojombo",
+        "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
+        "type": "User"
+      },
+      "html_url": "https://github.com/mojombo/god",
+      "description": "Ruby process monitor.",
+      "fork": true,
+      "url": "http://127.0.0.1:8080/repos/mojombo/god",
+      "languages_url": "http://127.0.0.1:8080/repos/mojombo/god/languages",
+      "stargazers_count": 1050,
+      "language": "Ruby"
+    }
+  }
+}

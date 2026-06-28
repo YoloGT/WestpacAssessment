@@ -4,12 +4,18 @@ Native SwiftUI GitHub repository explorer for the Westpac coding assessment.
 
 The app fetches public repositories from `https://api.github.com/repositories`, displays them in grouped sections, supports local favourites, handles loading and error states, and loads additional pages using GitHub's `Link` header `rel="next"` URL.
 
+The top-left toolbar menu switches the repository source between the real GitHub API and a local WireMock server.
+
 ## File Structure
 
 The app is organised by feature under `WestpacAssessment/WestpacAssessment/Features`.
 
 ```text
 WestpacAssessment/
+  WireMock/
+    Dockerfile
+    docker-compose.yml
+    mappings/
   WestpacAssessment/
     ContentView.swift
     WestpacAssessmentApp.swift
@@ -74,6 +80,55 @@ UITEST_RESET_BOOKMARKS=1
 ```
 
 This lets UI tests run without network access and with a clean bookmark state.
+
+### WireMock
+
+`WireMock` contains a Docker-based local API mock that behaves like the GitHub repository API endpoints used by the app.
+
+#### How To Use WireMock
+
+Make sure Docker is running, then start the mock server from the project root:
+
+```sh
+cd WireMock
+docker compose up --build
+```
+
+Leave that terminal running. WireMock will serve the mock GitHub API at:
+
+```text
+http://127.0.0.1:8080/repositories
+```
+
+Run the iOS app in the Simulator, then use the top-left `API Source` menu on the repository list screen. Select `WireMock`. The list will refresh and load from the local Docker mock instead of the real GitHub API.
+
+To stop WireMock, press `Control-C` in the Docker terminal, then run:
+
+```sh
+docker compose down
+```
+
+You can also build and run it manually from the project root:
+
+```sh
+docker build -t westpac-assessment-wiremock WireMock
+docker run --rm -p 8080:8080 westpac-assessment-wiremock
+```
+
+The app's `WireMock` source calls:
+
+```text
+http://127.0.0.1:8080/repositories
+```
+
+The WireMock mappings include:
+
+- Repository page 1 and page 2.
+- A GitHub-style `Link` header with `rel="next"` pagination.
+- Repository detail endpoints used for stargazer/language metadata.
+- Language endpoints used by the language grouping and detail screen.
+
+Use the top-left `API Source` menu in the list screen to switch between `GitHub` and `WireMock`. Switching source refreshes the list and clears the current in-memory repository metadata for the newly selected source.
 
 ## Tests
 

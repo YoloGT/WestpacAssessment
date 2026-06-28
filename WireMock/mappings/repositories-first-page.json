@@ -1,0 +1,254 @@
+{
+  "priority": 5,
+  "request": {
+    "method": "GET",
+    "urlPath": "/repositories"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "Link": "<http://127.0.0.1:8080/repositories?since=28>; rel=\"next\""
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "name": "grit",
+        "full_name": "mojombo/grit",
+        "owner": {
+          "login": "mojombo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
+          "type": "User"
+        },
+        "html_url": "https://github.com/mojombo/grit",
+        "description": "**Grit is no longer maintained. Check out libgit2/rugged.** Grit gives you object oriented read/write access to Git repositories via Ruby.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/mojombo/grit",
+        "languages_url": "http://127.0.0.1:8080/repos/mojombo/grit/languages",
+        "stargazers_count": 2100,
+        "language": "Ruby"
+      },
+      {
+        "id": 26,
+        "name": "merb-core",
+        "full_name": "wycats/merb-core",
+        "owner": {
+          "login": "wycats",
+          "avatar_url": "https://avatars.githubusercontent.com/u/4?v=4",
+          "type": "User"
+        },
+        "html_url": "https://github.com/wycats/merb-core",
+        "description": "Merb Core: All you need. None you don't.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/wycats/merb-core",
+        "languages_url": "http://127.0.0.1:8080/repos/wycats/merb-core/languages",
+        "stargazers_count": 790,
+        "language": "Ruby"
+      },
+      {
+        "id": 27,
+        "name": "rubinius",
+        "full_name": "rubinius/rubinius",
+        "owner": {
+          "login": "rubinius",
+          "avatar_url": "https://avatars.githubusercontent.com/u/317747?v=4",
+          "type": "Organization"
+        },
+        "html_url": "https://github.com/rubinius/rubinius",
+        "description": "The Rubinius Language Platform",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/rubinius/rubinius",
+        "languages_url": "http://127.0.0.1:8080/repos/rubinius/rubinius/languages",
+        "stargazers_count": 5500,
+        "language": "C++"
+      },
+      {
+        "id": 28,
+        "name": "god",
+        "full_name": "mojombo/god",
+        "owner": {
+          "login": "mojombo",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
+          "type": "User"
+        },
+        "html_url": "https://github.com/mojombo/god",
+        "description": "Ruby process monitor.",
+        "fork": true,
+        "url": "http://127.0.0.1:8080/repos/mojombo/god",
+        "languages_url": "http://127.0.0.1:8080/repos/mojombo/god/languages",
+        "stargazers_count": 1050,
+        "language": "Ruby"
+      },
+      {
+        "id": 30,
+        "name": "linguist",
+        "full_name": "github-linguist/linguist",
+        "owner": {
+          "login": "github-linguist",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "type": "Organization"
+        },
+        "html_url": "https://github.com/github-linguist/linguist",
+        "description": "Language Savant. If your repository's language is being reported incorrectly, send us a pull request.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/github-linguist/linguist",
+        "languages_url": "http://127.0.0.1:8080/repos/github-linguist/linguist/languages",
+        "stargazers_count": 12800,
+        "language": "Ruby"
+      },
+      {
+        "id": 31,
+        "name": "swift",
+        "full_name": "apple/swift",
+        "owner": {
+          "login": "apple",
+          "avatar_url": "https://avatars.githubusercontent.com/u/10639145?v=4",
+          "type": "Organization"
+        },
+        "html_url": "https://github.com/apple/swift",
+        "description": "The Swift Programming Language.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/apple/swift",
+        "languages_url": "http://127.0.0.1:8080/repos/apple/swift/languages",
+        "stargazers_count": 69000,
+        "language": "C++"
+      },
+      {
+        "id": 32,
+        "name": "alamofire",
+        "full_name": "Alamofire/Alamofire",
+        "owner": {
+          "login": "Alamofire",
+          "avatar_url": "https://avatars.githubusercontent.com/u/7774181?v=4",
+          "type": "Organization"
+        },
+        "html_url": "https://github.com/Alamofire/Alamofire",
+        "description": "Elegant HTTP Networking in Swift.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/Alamofire/Alamofire",
+        "languages_url": "http://127.0.0.1:8080/repos/Alamofire/Alamofire/languages",
+        "stargazers_count": 41000,
+        "language": "Swift"
+      },
+      {
+        "id": 33,
+        "name": "react",
+        "full_name": "facebook/react",
+        "owner": {
+          "login": "facebook",
+          "avatar_url": "https://avatars.githubusercontent.com/u/69631?v=4",
+          "type": "Organization"
+        },
+        "html_url": "https://github.com/facebook/react",
+        "description": "The library for web and native user interfaces.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/facebook/react",
+        "languages_url": "http://127.0.0.1:8080/repos/facebook/react/languages",
+        "stargazers_count": 236000,
+        "language": "JavaScript"
+      },
+      {
+        "id": 34,
+        "name": "vscode",
+        "full_name": "microsoft/vscode",
+        "owner": {
+          "login": "microsoft",
+          "avatar_url": "https://avatars.githubusercontent.com/u/6154722?v=4",
+          "type": "Organization"
+        },
+        "html_url": "https://github.com/microsoft/vscode",
+        "description": "Visual Studio Code.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/microsoft/vscode",
+        "languages_url": "http://127.0.0.1:8080/repos/microsoft/vscode/languages",
+        "stargazers_count": 170000,
+        "language": "TypeScript"
+      },
+      {
+        "id": 35,
+        "name": "awesome",
+        "full_name": "sindresorhus/awesome",
+        "owner": {
+          "login": "sindresorhus",
+          "avatar_url": "https://avatars.githubusercontent.com/u/170270?v=4",
+          "type": "User"
+        },
+        "html_url": "https://github.com/sindresorhus/awesome",
+        "description": "Awesome lists about all kinds of interesting topics.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/sindresorhus/awesome",
+        "languages_url": "http://127.0.0.1:8080/repos/sindresorhus/awesome/languages",
+        "stargazers_count": 360000,
+        "language": null
+      },
+      {
+        "id": 36,
+        "name": "linux",
+        "full_name": "torvalds/linux",
+        "owner": {
+          "login": "torvalds",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1024025?v=4",
+          "type": "User"
+        },
+        "html_url": "https://github.com/torvalds/linux",
+        "description": "Linux kernel source tree.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/torvalds/linux",
+        "languages_url": "http://127.0.0.1:8080/repos/torvalds/linux/languages",
+        "stargazers_count": 190000,
+        "language": "C"
+      },
+      {
+        "id": 37,
+        "name": "Hello-World",
+        "full_name": "octocat/Hello-World",
+        "owner": {
+          "login": "octocat",
+          "avatar_url": "https://avatars.githubusercontent.com/u/583231?v=4",
+          "type": "User"
+        },
+        "html_url": "https://github.com/octocat/Hello-World",
+        "description": "My first repository on GitHub.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/octocat/Hello-World",
+        "languages_url": "http://127.0.0.1:8080/repos/octocat/Hello-World/languages",
+        "stargazers_count": 2800,
+        "language": "Ruby"
+      },
+      {
+        "id": 38,
+        "name": "AFNetworking",
+        "full_name": "AFNetworking/AFNetworking",
+        "owner": {
+          "login": "AFNetworking",
+          "avatar_url": "https://avatars.githubusercontent.com/u/2619464?v=4",
+          "type": "Organization"
+        },
+        "html_url": "https://github.com/AFNetworking/AFNetworking",
+        "description": "A delightful networking framework for Apple platforms.",
+        "fork": true,
+        "url": "http://127.0.0.1:8080/repos/AFNetworking/AFNetworking",
+        "languages_url": "http://127.0.0.1:8080/repos/AFNetworking/AFNetworking/languages",
+        "stargazers_count": 33300,
+        "language": "Objective-C"
+      },
+      {
+        "id": 39,
+        "name": "models",
+        "full_name": "tensorflow/models",
+        "owner": {
+          "login": "tensorflow",
+          "avatar_url": "https://avatars.githubusercontent.com/u/15658638?v=4",
+          "type": "Organization"
+        },
+        "html_url": "https://github.com/tensorflow/models",
+        "description": "Models and examples built with TensorFlow.",
+        "fork": false,
+        "url": "http://127.0.0.1:8080/repos/tensorflow/models",
+        "languages_url": "http://127.0.0.1:8080/repos/tensorflow/models/languages",
+        "stargazers_count": 78000,
+        "language": "Python"
+      }
+    ]
+  }
+}

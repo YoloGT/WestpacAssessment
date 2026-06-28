@@ -15,6 +15,25 @@ struct RepositoryListView: View {
             repositoryList
                 .navigationTitle("GitHub Repos")
                 .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Menu {
+                            ForEach(RepositoryAPISource.allCases) { source in
+                                Button {
+                                    Task { await viewModel.switchAPISource(to: source) }
+                                } label: {
+                                    if viewModel.apiSource == source {
+                                        Label(source.rawValue, systemImage: "checkmark")
+                                    } else {
+                                        Text(source.rawValue)
+                                    }
+                                }
+                            }
+                        } label: {
+                            Label(viewModel.apiSource.rawValue, systemImage: viewModel.apiSource.systemImage)
+                        }
+                        .accessibilityLabel("API Source")
+                    }
+
                     ToolbarItem(placement: .topBarTrailing) {
                         Menu {
                             ForEach(RepositoryGrouping.allCases) { grouping in

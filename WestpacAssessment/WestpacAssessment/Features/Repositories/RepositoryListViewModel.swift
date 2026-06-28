@@ -14,21 +14,34 @@ final class RepositoryListViewModel: ObservableObject {
     @Published private(set) var sections: [RepositorySection] = []
     @Published private(set) var isInitialLoading = false
     @Published private(set) var isLoadingNextPage = false
+    @Published private(set) var apiSource: RepositoryAPISource
     @Published var grouping: RepositoryGrouping = .ownerType {
         didSet { rebuildSections() }
     }
     @Published var errorMessage: String?
 
-    private let client: GitHubRepositoryServing
+    private var client: GitHubRepositoryServing
     let bookmarkStore: BookmarkStore
     private var nextURL: URL?
     private var hasLoadedInitialPage = false
     private var languageByRepositoryID: [Int: RepositoryLanguages] = [:]
     private var metadataTasks: Set<Int> = []
 
-    init(client: GitHubRepositoryServing, bookmarkStore: BookmarkStore) {
-        self.client = client
+    init(
+        client: GitHubRepositoryServing? = nil,
+        apiSource: RepositoryAPISource = .gitHub,
+        bookmarkStore: BookmarkStore
+    ) {
+        self.apiSource = apiSource
+        self.client = client ?? apiSource.makeClient()
         self.bookmarkStore = bookmarkStore
+    }
+
+    func switchAPISource(to source: RepositoryAPISource) async {
+        guard source != apiSource else { return }
+        apiSource = source
+        client = source.makeClient()
+        await refresh()
     }
 
     var canLoadMore: Bool {
@@ -179,4 +192,29 @@ private struct RepositoryMetadata {
     let repositoryID: Int
     let details: GitHubRepository?
     let languages: RepositoryLanguages?
+}
+
+enum RepositoryAPISource: String, CaseIterable, Identifiable {
+    case gitHub = "GitHub"
+    case wireMock = "WireMock"
+
+    var id: String { rawValue }
+
+    var systemImage: String {
+        switch self {
+        case .gitHub:
+            "network"
+        case .wireMock:
+            "server.rack"
+        }
+    }
+
+    func makeClient() -> GitHubRepositoryServing {
+        switch self {
+        case .gitHub:
+            GitHubAPIClient()
+        case .wireMock:
+            GitHubAPIClient(repositoriesURL: URL(string: "http://127.0.0.1:8080/repositories")!)
+        }
+    }
 }

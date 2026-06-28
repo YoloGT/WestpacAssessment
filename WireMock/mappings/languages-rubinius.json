@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/repos/rubinius/rubinius/languages"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "C++": 51000,
+      "Ruby": 16000,
+      "C": 3000
+    }
+  }
+}

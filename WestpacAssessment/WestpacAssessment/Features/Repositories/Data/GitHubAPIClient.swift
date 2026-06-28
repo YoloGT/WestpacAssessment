@@ -45,16 +45,21 @@ enum GitHubAPIError: LocalizedError, Equatable {
 final class GitHubAPIClient: GitHubRepositoryServing {
     private let session: URLSession
     private let decoder: JSONDecoder
+    private let repositoriesURL: URL
     private var repositoryCache: [URL: GitHubRepository] = [:]
     private var languageCache: [URL: RepositoryLanguages] = [:]
 
-    init(session: URLSession = .shared) {
+    init(
+        session: URLSession = .shared,
+        repositoriesURL: URL = URL(string: "https://api.github.com/repositories")!
+    ) {
         self.session = session
         self.decoder = JSONDecoder()
+        self.repositoriesURL = repositoriesURL
     }
 
     func fetchRepositories(from url: URL? = nil) async throws -> RepositoryPage {
-        let requestURL = url ?? URL(string: "https://api.github.com/repositories")!
+        let requestURL = url ?? repositoriesURL
         var request = URLRequest(url: requestURL)
         request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
         request.setValue("WestpacAssessment", forHTTPHeaderField: "User-Agent")
